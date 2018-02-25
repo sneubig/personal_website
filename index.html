@@ -1,0 +1,296 @@
+<html>
+  <head>
+  	<!-- <meta http-equiv="refresh" content="5" > -->
+    <title>Stephen Neubig</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Nunito:700" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"/>
+    <link rel="stylesheet" type="text/css" href="./css/style.css"/>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.bundle.min.js"></script>
+    
+    <script type="text/javascript" src="./js/script.js"></script>
+  </head>
+  
+  <body>
+  	
+    <!-- Header -->
+    <div id="menu">
+      <div id="menuBrand">
+        <a href="#welcomeContainer">
+          <h3>Stephen Neubig</h3>
+        </a>
+      </div>
+
+      <div id="nav" class="nav">
+
+        <ul>
+          <li id="navItem1" class="nav-item">
+            <a class="nav-link" href="#welcomeContainer">Home
+            </a>
+          </li>
+          <li id="navItem2" class="nav-item">
+            <a class="nav-link" href="#About">About
+            </a>
+          </li>
+          <li id="navItem3" class="nav-item">
+            <a class="nav-link" href="#Skills">Skills</a>
+          </li>
+          <li id="navMenuIcon" class="nav-item">
+            <a href="javascript:void(0);" class="icon" onclick="toggleMenuDropdown()">&#9776;</a>
+          </li>
+        </ul>
+      </div>
+    
+    </div>
+
+  		
+
+
+<div id="mainContainer">
+
+  <!-- Welcome -->
+  <div id="welcomeContainer">
+    <div class="container">	
+      <div class="row">
+
+        <div id="welcome_content_container" class="col">
+          <div id="welcome_content">
+            <h1>Welcome to my Website</h1>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- About -->
+  <div id="About">
+    <div class="container">
+      <div class="row">
+
+        <div id="aboutme_content" class="col-sm-10 offset-sm-1 col-md-8 offset-md-2">
+          
+          <div id="aboutme_image_container" class="col-sm-12 col-md-4 offset-md-4">
+            <img id="aboutme_image" src="./img/AboutMePhoto.jpg"/>
+          </div>
+
+          <p>
+            Full stack web developer with a marketing touch, passionate and loyal to the brands, products, and communities I admire. Motivated by innovative thought and engaging communication, I build captivating experiences that enhance the overall brand awareness.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Skills -->
+  <div id="Skills">
+    <div class="container">
+      <div class="row">
+        <div class="sectionTitle">
+          <h2>Experience</h2>
+        </div>
+
+        <div class="row">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <div id="footer">
+  </div>
+
+  <div id="buttonContainer">
+    <div id="navButton1" class="navButton"></div>
+    <div id="navButton2" class="navButton"></div>
+    <div id="navButton3" class="navButton"></div>
+    <div id="navButton4" class="navButton"></div>
+  </div>
+  
+</div>
+<!--
+    
+
+    <!-- Projects
+  	<section>
+  		<div id="Projects">
+        <div class="container">
+          <div class="row sectionTitle">
+            <h2>Projects</h2>
+          </div>
+			
+          <div class="row justify-content-around">
+            <!-- Card 1
+            <div class="card col-sm-5 projectCard">
+              <img class="card-img-top" src="./img/mountains.jpg" alt="Card image cap">
+              <div class="card-body">
+                <p class="card-text">
+                  Some quick example text to build on the card title and make up the bulk of the card's content.
+                </p>
+              </div>
+            </div>
+            <!-- Card 2 
+            <div class="card col-sm-5 projectCard">
+              <img class="card-img-top" src="./img/mountains.jpg" alt="Card image cap">
+              <div class="card-body">
+                <p class="card-text">
+                  Some quick example text to build on the card title and make up the bulk of the card's content.
+                </p>
+              </div>
+            </div>
+            <!-- Card 3 
+            <div class="card col-sm-5 projectCard">
+              <img class="card-img-top" src="./img/mountains.jpg" alt="Card image cap">
+              <div class="card-body">
+                <p class="card-text">
+                  Some quick example text to build on the card title and make up the bulk of the card's content.
+                </p>
+              </div>
+            </div>
+            <!-- Card 4 
+            <div class="card col-sm-5 projectCard">
+              <img class="card-img-top" src="./img/mountains.jpg" alt="Card image cap">
+              <div class="card-body">
+                <p class="card-text">
+                  Some quick example text to build on the card title and make up the bulk of the card's content.
+                </p>
+              </div>
+            </div>
+            
+  			 </div>
+        </div>
+		  </div>
+  	</section>
+
+    
+
+
+    <!-- Resume 
+    <section>
+      <div id="Resume" class="container">
+        <div class="row sectionTitle">
+          <h2>Resume</h2>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- Footer 
+  	<footer>
+      <div class="container">
+    			<p class="col-sm-4">Stephen's Website</p>
+    			<ul id="footerNav" class="col-sm-8">
+    				<a href="#"><li>Facebook</li></a>
+    				<a href="#"><li>Twitter</li></a>
+    				<a href="#"><li>Instagram</li></a>
+    			</ul>
+      </div>
+  	</footer>
+  -->
+
+  <script>
+
+/* When the user clicks on the button, 
+toggle between hiding and showing the dropdown content */
+function toggleMenuDropdown() {
+    var x = document.getElementById("nav");
+    if (x.className === "nav") {
+        x.className += " responsive";
+    } else {
+        x.className = "nav";
+    }
+}
+
+
+$(document).ready(function() {
+ 
+
+
+    // Default actions
+    $(".navbar-nav").find("a.nav-link.active").removeClass("active");
+    $("#navItem1 a.nav-link").addClass("active"); //Activate first tab
+
+
+    // On Click Actions
+
+    // Nav Items on the Header 
+    $("#navItem1").click(function() {
+      $("section:not(#welcomeContainer)").hide();
+      $("#welcomeContainer").show();
+
+      $(".navButton:not(#navButton1)").css("background-color", "transparent");
+      $("#navButton1").css("background-color", "#FF8300");
+    });
+
+    $("#navItem2").click(function() {
+      $("section:not(#About)").hide();
+      $("#About").show();
+
+      $(".navButton:not(#navButton2)").css("background-color", "transparent");
+      $("#navButton2").css("background-color", "#FF8300");
+    });
+
+    $("#navItem3").click(function() {
+      $("section:not(#Skills)").hide();
+      $("#Skills").show();
+
+      $(".navButton:not(#navButton3)").css("background-color", "transparent");
+      $("#navButton3").css("background-color", "#FF8300");
+    });
+
+
+    // Navigation Dots that control Navigation as well
+    $("#navButton1" ).click(function() {
+      $("section:not(#welcomeContainer)").hide();
+      $("#welcomeContainer").show();
+
+      $("a.nav-link:not(#navItem1)").removeClass("active");
+      $("#navItem1 .nav-link").addClass("active");
+    });
+
+
+    $("#navButton2").click(function() {
+      $("section:not(#About)").hide();
+      $("#About").show();
+
+      $("a.nav-link:not(#navItem2)").removeClass("active");
+      $("#navItem2 .nav-link").addClass("active");
+    });
+
+
+    $("#navButton3").click(function() {
+      $("section:not(#Skills)").hide();
+      $("#Skills").show();
+
+      $("a.nav-link:not(#navItem3)").removeClass("active");
+      $("#navItem3 .nav-link").addClass("active");
+    });
+
+
+    
+
+    // Adds the styling to the active Nav Item on the Nav Bar
+    $("a.nav-link").click(function() {
+      $("a.nav-link:not(this)").removeClass("active");
+      $(this).addClass("active");
+    })
+
+    // Fills in button that is selected, and removes the fill for all other buttons
+    $(".navButton").click(function() {
+      $(".navButton:not(this)").css("background-color", "transparent");
+      $(this).css("background-color", "#FF8300");
+    });
+
+    
+ });   
+
+
+
+
+    
+
+
+  </script>
+  </body>
+</html>

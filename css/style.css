@@ -1,0 +1,98 @@
+* {
+  box-sizing: border-box; }
+
+#menu {
+  width: 100%;
+  height: 40px;
+  display: block;
+  background-color: #02c9c9; }
+  #menu #menuBrand {
+    float: left;
+    position: relative;
+    margin: 0.5em; }
+    #menu #menuBrand a {
+      color: #ffc300; }
+      #menu #menuBrand a:hover {
+        text-decoration: none; }
+  #menu #nav {
+    float: right;
+    overflow: hidden;
+    /* Dropdown container - needed to position the dropdown content */ }
+    #menu #nav .dropdown {
+      float: left;
+      overflow: hidden; }
+    #menu #nav .nav-item {
+      text-decoration: none;
+      display: inline-block;
+      margin-right: 1rem; }
+    #menu #nav .nav-link {
+      color: #fff; }
+      #menu #nav .nav-link.active {
+        border-bottom: 2px solid #fff; }
+      #menu #nav .nav-link:hover {
+        color: white;
+        border-bottom: 2px solid #fff; }
+
+/* When the screen is less than 600 pixels wide, hide all links, except for the Menu Icon. 
+   Show the link that contains the open and close Menu (.icon) */
+@media screen and (max-width: 600px) {
+  #nav .nav-Item a:not(.icon) {
+    display: none; }
+
+  #nav #navMenuIcon a.icon {
+    float: right;
+    display: block; } }
+/* The "responsive" class is added to the #nav with JavaScript when the user clicks on the icon. 
+This class makes the topnav look good on small screens (display the links vertically instead of horizontally) */
+@media screen and (max-width: 600px) {
+  #nav .nav.responsive {
+    position: relative; }
+
+  .nav.responsive ul #navMenuIcon a.icon {
+    position: absolute;
+    right: 0;
+    top: 0; }
+
+  .nav.responsive ul .nav-Item a.nav-link {
+    display: block;
+    width: 100%;
+    text-align: left; } }
+.row {
+  width: 100%;
+  margin: 0; }
+
+.container {
+  height: 100%;
+  padding: 2em 0; }
+
+#welcomeContainer {
+  display: block;
+  background-color: #02c9c9;
+  height: 500px; }
+  #welcomeContainer #welcome_content_container {
+    height: 85%;
+    display: flex;
+    align-items: center; }
+    #welcomeContainer #welcome_content_container #welcome_content h1 {
+      font-size: 8em;
+      font-family: "Nunito", sans-serif;
+      text-align: center;
+      color: #fff;
+      border: 4px solid white; }
+
+#About {
+  height: 400px; }
+  #About #aboutme_content p {
+    margin-top: 2em; }
+  #About #aboutme_image_container img#aboutme_image {
+    height: 10em;
+    width: 10em;
+    border-radius: 50%; }
+
+#Skills {
+  background-color: #ffc300; }
+
+#footer {
+  height: 40px; }
+
+/*# sourceMappingURL=style.css.map */
