@@ -12,29 +12,25 @@
     <script type="text/javascript" src="./js/script.js"></script>
   </head>
   
-  <body>
+  <body >
   	
-    <div class="topnav" id="myTopnav">
-      <a href="#welcomeContainer" class="active navLink">Home</a>
-      <a href="#About" class="navLink">My Story</a>
-      <a href="#Skills" class="navLink">Experience</a>
-    
-      <div class="dropdown">
-        <!-- 
-        <button class="dropbtn">Dropdown 
-          <i class="fa fa-caret-down"></i>
-        </button>
-      -->
-        <div class="dropdown-content">
-          <a href="#">Link 1</a>
-          <a href="#">Link 2</a>
-          <a href="#">Link 3</a>
-        </div>
-      </div> 
-  
-      <a href="#about" class="navLink">About</a>
-      <a href="javascript:void(0);" class="icon" onclick="myFunction()">&#9776;</a>
-    </div>
+    <header>
+      <a id="menu-icon" onclick="openMenu()">&#9776;</a>
+
+      <nav id="nav">    
+          <ul id="navLinks">
+            <li>
+              <a href="#welcomeContainer" class="active">Home</a>
+            </li>
+            <li>
+              <a href="#About">My Story</a>
+            </li>
+            <li>
+              <a href="#Skills">Experience</a>
+            </li>
+          </ul>
+      </nav>
+  </header>
     <!-- Header 
     <div id="menu">
 
@@ -68,7 +64,7 @@
  
     </div>
   		-->
-<div id="mainContainer">
+<div id="mainContainer" data-spy="scroll" data-target="#myTopNav">
 
   <!-- Welcome -->
   <div id="welcomeContainer">
@@ -212,12 +208,12 @@
 
   <script>
 /* Toggle between adding and removing the "responsive" class to topnav when the user clicks on the icon */
-function myFunction() {
-    var x = document.getElementById("myTopnav");
-    if (x.className === "topnav") {
-        x.className += " responsive";
+function openMenu() {
+    var x = document.getElementById("nav");
+    if (x.className === "responsive") {
+        x.className = " ";
     } else {
-        x.className = "topnav";
+        x.className = "responsive";
     }
 }
 
@@ -226,8 +222,8 @@ $(document).ready(function() {
 
 
     // Default actions
-    $("#myTopnav a.navLink").click(function() {
-      $("#myTopnav").find("a.navLink.active").removeClass("active");
+    $("#nav a").click(function() {
+      $("#nav").find("a.active").removeClass("active");
       $(this).addClass("active"); //Activate first tab
     });
     

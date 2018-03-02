@@ -1,77 +1,45 @@
 * {
   box-sizing: border-box; }
 
-/* Add a black background color to the top navigation */
-.topnav {
-  position: fixed;
+header {
   background-color: #02c9c9;
-  overflow: hidden;
-  z-index: 100;
   width: 100%;
-  display: block;
-  height: 55px;
-  /* Style the links inside the navigation bar */
-  /* Hide the link that should open and close the topnav on small screens */ }
-  .topnav a {
-    float: left;
-    display: block;
-    color: #fff;
-    text-align: center;
-    padding: .5em 1em;
-    margin: 0 .5em;
+  height: 40px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100; }
+  header ul {
+    height: 100%;
+    margin-right: 10%;
+    float: right;
+    list-style-type: none;
+    /* align vertically */
+    display: flex;
+    align-items: center; }
+  header li {
     text-decoration: none;
-    font-size: 17px; }
-  .topnav .icon {
-    display: none; }
-
-/* Add an active class to highlight the current page */
-.active {
-  border-bottom: 3px solid white;
-  color: white; }
-
-/* Dropdown container - needed to position the dropdown content */
-.dropdown {
-  float: left;
-  overflow: hidden;
-  /* Style the dropdown button to fit inside the topnav */ }
-  .dropdown .dropbtn {
-    font-size: 17px;
-    border: none;
-    outline: none;
+    display: inline-block;
     color: white;
-    padding: 14px 16px;
-    background-color: inherit;
-    font-family: inherit;
-    margin: 0; }
+    margin: 1em; }
+  header a {
+    color: white;
+    font-weight: bold;
+    font-family: "Nunito", sans-serif; }
+    header a:hover {
+      color: #ffc300;
+      text-decoration: none; }
+    header a.active {
+      border-bottom: 3px solid #fff; }
 
-/* Style the dropdown content (hidden by default) */
-.dropdown-content {
-  display: none;
+/* Hide the link that should open and close the topnav on small screens */
+#menu-icon {
+  visibility: hidden;
+  transform: scale(2);
+  display: inline-block;
   position: absolute;
-  background-color: #f9f9f9;
-  min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-  z-index: 1;
-  /* Style the links inside the dropdown */ }
-  .dropdown-content a {
-    float: none;
-    color: black;
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
-    text-align: left;
-    /* Add a grey background to dropdown links on hover */ }
-    .dropdown-content a:hover {
-      border-bottom: 1px solid white;
-      color: black;
-      /* Show the dropdown menu when the user moves the mouse over the dropdown button */ }
-      .dropdown-content a:hover .dropdown-content {
-        display: block; }
-
-/* Add a dark background on topnav links and the dropdown button on hover */
-.topnav a:hover, .dropdown:hover .dropbtn {
-  border-bottom: 3px solid #ffc300;
-  color: #ffc300; }
+  top: 5px;
+  right: 10px; }
 
 /* Navigation
 	#menu{
@@ -126,7 +94,8 @@
 	}
 */
 #mainContainer {
-  display: block; }
+  display: block;
+  position: relative; }
 
 .row {
   width: 100%;
@@ -169,37 +138,46 @@
 
 /* When the screen is less than 600 pixels wide, hide all links, except for the first one ("Home"). Show the link that contains should open and close the topnav (.icon) */
 @media screen and (max-width: 600px) {
-  .topnav a:not(:first-child) {
+  body header {
+    position: absolute; }
+
+  /*.topnav a:not(:first-child) {display: none;}*/
+  body header #menu-icon {
+    visibility: visible; }
+
+  body nav ul {
     display: none; }
 
-  .topnav a.icon {
-    float: right;
-    display: block; }
-
   /* The "responsive" class is added to the topnav with JavaScript when the user clicks on the icon. This class makes the topnav look good on small screens (display the links vertically instead of horizontally) */
-  .topnav.responsive {
-    position: fixed;
-    height: auto;
-    background-color: white; }
-    .topnav.responsive a {
-      float: none;
+  body header #nav.responsive {
+    height: 200px;
+    width: 100%;
+    background-color: #fff;
+    border-bottom: 3px solid #ffc300; }
+    body header #nav.responsive ul {
+      margin-right: 0;
+      margin-top: 40px;
       display: block;
+      width: 100%; }
+    body header #nav.responsive li {
+      height: auto;
+      text-align: center;
+      width: 100%;
+      padding: 10px 0;
+      margin: 0;
+      display: block; }
+      body header #nav.responsive li:hover {
+        color: #ffc300;
+        border-left: 2px solid #ffc300;
+        background-color: #ffc300;
+        opacity: 0.1; }
+    body header #nav.responsive a {
+      float: none;
       text-align: left;
-      color: #ffc300; }
-      .topnav.responsive a.active {
-        background-color: #02c9c9; }
-    .topnav.responsive a.icon {
-      position: absolute;
-      right: 0;
-      top: 0; }
-    .topnav.responsive .dropdown {
-      float: none; }
-      .topnav.responsive .dropdown .dropbtn {
-        display: block;
-        width: 100%;
-        text-align: left; }
-    .topnav.responsive .dropdown-content {
-      position: relative; }
+      color: #02c9c9; }
+      body header #nav.responsive a.active {
+        background-color: #ffc300;
+        opacity: 0.5; }
 
   /* Welcome Container */
   #welcomeContainer #welcome_content h1 {
