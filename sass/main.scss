@@ -4,6 +4,10 @@ $primaryFont: 'Nunito', sans-serif;
 $secondaryColor: #fff;
 $maroon: maroon;
 $orange: #ffc300;
+$navbarHeight: 40px;
+$headerHeight: $navbarHeight + 5px;
+
+$black: #000;
 
 
 
@@ -15,9 +19,64 @@ $orange: #ffc300;
 	box-sizing: border-box;
 }
 
+header {
+  background-color: $primaryColor;
+  width: 100%;
+  height: $headerHeight;
+  position: fixed; 
+  top: 0;
+  left: 0;
+  z-index: 100;
+  ul {
+    height: 100%;
+    margin-right: 10%;
+    float: right;
+    list-style-type: none;
+    /* align vertically */
+    display: flex;
+    align-items: center;
+  }
+
+  li {
+    text-decoration: none;
+    display: inline-block;
+    color: white;
+    margin: 1em;
+    
+  }
+
+  a {
+    color: white;
+    font-weight: bold;
+    font-family: $primaryFont;
+    &:hover {
+      color: $orange;
+      text-decoration: none;
+    }
+    &.active{
+      border-bottom: 3px solid $secondaryColor;
+    }
+  }
+}
+
+/* Hide the link that should open and close the topnav on small screens */
+  #menu-icon {
+    visibility: hidden;
+    transform: scale(2.0);
+    display: inline-block;
+    position: absolute;
+    top: 5px;
+    right: 10px;
+  }
+
+  #header nav#nav.navbar {
+      height: $navbarHeight;
+      padding: 0;
+    }
 
 
-// Navigation
+
+/* Navigation
 	#menu{
 		width: 100%;
 		height: 40px;
@@ -39,16 +98,12 @@ $orange: #ffc300;
 			
 		}
 
+	
+
 		#nav{
 			float: right;
-			overflow: hidden;
-
-			/* Dropdown container - needed to position the dropdown content */
-			.dropdown {
-				float: left;
-				overflow: hidden;
-			}
 			
+
 			.nav-item {
 				text-decoration: none;
 				display: inline-block;
@@ -72,38 +127,13 @@ $orange: #ffc300;
 		}
 		
 	}
-
-/* When the screen is less than 600 pixels wide, hide all links, except for the Menu Icon. 
-   Show the link that contains the open and close Menu (.icon) */
-@media screen and (max-width: 600px) {
-  #nav .nav-Item a:not(.icon) {display: none;}
-  #nav #navMenuIcon a.icon {
-    float: right;
-    display: block;
-  }
+*/
+body {
+  position: relative;
 }
-
-/* The "responsive" class is added to the #nav with JavaScript when the user clicks on the icon. 
-This class makes the topnav look good on small screens (display the links vertically instead of horizontally) */
-@media screen and (max-width: 600px) {
-	#nav .nav.responsive {
-		position: relative;
-	}
-
-  .nav.responsive ul #navMenuIcon a.icon {
-    position: absolute;
-    right: 0;
-    top: 0;
-  }
-  .nav.responsive ul .nav-Item a.nav-link{
-    display: block;
-    width: 100%;
-    text-align: left;
-
-  }
+#mainContainer {
+	display: block;
 }
-
-
 
 // Welcome
 .row {
@@ -123,30 +153,21 @@ This class makes the topnav look good on small screens (display the links vertic
 
 	#welcome_content_container{
 		height: 85%;
-
 		display: flex;
     align-items: center;
-
-		#welcome_content {
-
-			h1 {
-				font: {
-					size: 8em;
-					family: $primaryFont;	
-				}
-				text-align: center;
-				color: $secondaryColor;
-				border: 4px solid white;	
-			}
-
-		}
 	}
-	
 
-
-	
-
-
+  #welcome_content {
+    h1 {
+      font: {
+        size: 8em;
+        family: $primaryFont; 
+      }
+      text-align: center;
+      color: $secondaryColor;
+      border: 4px solid white;  
+    }
+  }
 }
 
 
@@ -167,6 +188,7 @@ This class makes the topnav look good on small screens (display the links vertic
 			height: 10em;
 			width: 10em;
 			border-radius: 50%;
+      margin: 0 auto;
 		}
 	}
 }
@@ -179,4 +201,69 @@ This class makes the topnav look good on small screens (display the links vertic
 // Footer
 #footer {
 	height: 40px;
+}
+
+
+/* When the screen is less than 600 pixels wide, hide all links, except for the first one ("Home"). Show the link that contains should open and close the topnav (.icon) */
+@media screen and (max-width: 600px) {
+
+  body header {
+    position: absolute;
+  }
+  /*.topnav a:not(:first-child) {display: none;}*/
+
+  body header #menu-icon {
+      visibility: visible;
+    }
+
+  body nav ul {
+    display: none;
+  }
+  
+
+
+  /* The "responsive" class is added to the topnav with JavaScript when the user clicks on the icon. This class makes the topnav look good on small screens (display the links vertically instead of horizontally) */
+  body header #nav.responsive {
+    height: 200px;
+    width: 100%;
+    background-color: $secondaryColor;
+    border-bottom: 3px solid $orange;
+    ul {
+      margin-right: 0;
+      margin-top: $navbarHeight;
+      display: block;
+      width: 100%;
+    }
+    li {
+      height: auto;
+      text-align: center;
+      width: 100%;
+      padding: 10px 0;
+      margin: 0;
+      display: block;
+      &:hover{
+        color: $orange;
+        border-left: 2px solid $orange;
+        background-color: $orange;
+        opacity: 0.1;
+      }
+    }
+    a {
+      float: none;
+      text-align: left;
+      color: $primaryColor;
+      
+
+      &.active {
+        background-color: $orange;
+        opacity: 0.5;
+      }
+
+    }
+  }
+
+  /* Welcome Container */
+  #welcomeContainer #welcome_content h1 {
+    font-size: 5em;
+  }
 }

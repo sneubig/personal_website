@@ -1,62 +1,108 @@
 * {
   box-sizing: border-box; }
 
-#menu {
+header {
+  background-color: #02c9c9;
   width: 100%;
+  height: 45px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100; }
+  header ul {
+    height: 100%;
+    margin-right: 10%;
+    float: right;
+    list-style-type: none;
+    /* align vertically */
+    display: flex;
+    align-items: center; }
+  header li {
+    text-decoration: none;
+    display: inline-block;
+    color: white;
+    margin: 1em; }
+  header a {
+    color: white;
+    font-weight: bold;
+    font-family: "Nunito", sans-serif; }
+    header a:hover {
+      color: #ffc300;
+      text-decoration: none; }
+    header a.active {
+      border-bottom: 3px solid #fff; }
+
+/* Hide the link that should open and close the topnav on small screens */
+#menu-icon {
+  visibility: hidden;
+  transform: scale(2);
+  display: inline-block;
+  position: absolute;
+  top: 5px;
+  right: 10px; }
+
+#header nav#nav.navbar {
   height: 40px;
-  display: block;
-  background-color: #02c9c9; }
-  #menu #menuBrand {
-    float: left;
-    position: relative;
-    margin: 0.5em; }
-    #menu #menuBrand a {
-      color: #ffc300; }
-      #menu #menuBrand a:hover {
-        text-decoration: none; }
-  #menu #nav {
-    float: right;
-    overflow: hidden;
-    /* Dropdown container - needed to position the dropdown content */ }
-    #menu #nav .dropdown {
-      float: left;
-      overflow: hidden; }
-    #menu #nav .nav-item {
-      text-decoration: none;
-      display: inline-block;
-      margin-right: 1rem; }
-    #menu #nav .nav-link {
-      color: #fff; }
-      #menu #nav .nav-link.active {
-        border-bottom: 2px solid #fff; }
-      #menu #nav .nav-link:hover {
-        color: white;
-        border-bottom: 2px solid #fff; }
+  padding: 0; }
 
-/* When the screen is less than 600 pixels wide, hide all links, except for the Menu Icon. 
-   Show the link that contains the open and close Menu (.icon) */
-@media screen and (max-width: 600px) {
-  #nav .nav-Item a:not(.icon) {
-    display: none; }
+/* Navigation
+	#menu{
+		width: 100%;
+		height: 40px;
+		display: block;
+		background-color: $primaryColor;
 
-  #nav #navMenuIcon a.icon {
-    float: right;
-    display: block; } }
-/* The "responsive" class is added to the #nav with JavaScript when the user clicks on the icon. 
-This class makes the topnav look good on small screens (display the links vertically instead of horizontally) */
-@media screen and (max-width: 600px) {
-  #nav .nav.responsive {
-    position: relative; }
 
-  .nav.responsive ul #navMenuIcon a.icon {
-    position: absolute;
-    right: 0;
-    top: 0; }
+		#menuBrand {
+			
+			float: left;
+			position: relative;
+			margin: 0.5em;
+			a{
+				color: $orange;
+				&:hover {
+					text-decoration: none;
+				}
+			}
+			
+		}
 
-  .nav.responsive ul .nav-Item a.nav-link {
-    display: block;
-    width: 100%;
-    text-align: left; } }
+	
+
+		#nav{
+			float: right;
+			
+
+			.nav-item {
+				text-decoration: none;
+				display: inline-block;
+				margin-right: 1rem;
+			}
+			
+			.nav-link{
+				color: $secondaryColor;
+
+				&.active {
+					border-bottom: 2px solid $secondaryColor;
+				}
+				&:hover {
+					color: white;
+					border-bottom: 2px solid #fff;
+
+				}
+
+			}
+			
+		}
+		
+	}
+*/
+body {
+  position: relative; }
+
+#mainContainer {
+  display: block; }
+
 .row {
   width: 100%;
   margin: 0; }
@@ -73,12 +119,12 @@ This class makes the topnav look good on small screens (display the links vertic
     height: 85%;
     display: flex;
     align-items: center; }
-    #welcomeContainer #welcome_content_container #welcome_content h1 {
-      font-size: 8em;
-      font-family: "Nunito", sans-serif;
-      text-align: center;
-      color: #fff;
-      border: 4px solid white; }
+  #welcomeContainer #welcome_content h1 {
+    font-size: 8em;
+    font-family: "Nunito", sans-serif;
+    text-align: center;
+    color: #fff;
+    border: 4px solid white; }
 
 #About {
   height: 400px; }
@@ -87,12 +133,60 @@ This class makes the topnav look good on small screens (display the links vertic
   #About #aboutme_image_container img#aboutme_image {
     height: 10em;
     width: 10em;
-    border-radius: 50%; }
+    border-radius: 50%;
+    margin: 0 auto; }
 
 #Skills {
   background-color: #ffc300; }
 
 #footer {
   height: 40px; }
+
+/* When the screen is less than 600 pixels wide, hide all links, except for the first one ("Home"). Show the link that contains should open and close the topnav (.icon) */
+@media screen and (max-width: 600px) {
+  body header {
+    position: absolute; }
+
+  /*.topnav a:not(:first-child) {display: none;}*/
+  body header #menu-icon {
+    visibility: visible; }
+
+  body nav ul {
+    display: none; }
+
+  /* The "responsive" class is added to the topnav with JavaScript when the user clicks on the icon. This class makes the topnav look good on small screens (display the links vertically instead of horizontally) */
+  body header #nav.responsive {
+    height: 200px;
+    width: 100%;
+    background-color: #fff;
+    border-bottom: 3px solid #ffc300; }
+    body header #nav.responsive ul {
+      margin-right: 0;
+      margin-top: 40px;
+      display: block;
+      width: 100%; }
+    body header #nav.responsive li {
+      height: auto;
+      text-align: center;
+      width: 100%;
+      padding: 10px 0;
+      margin: 0;
+      display: block; }
+      body header #nav.responsive li:hover {
+        color: #ffc300;
+        border-left: 2px solid #ffc300;
+        background-color: #ffc300;
+        opacity: 0.1; }
+    body header #nav.responsive a {
+      float: none;
+      text-align: left;
+      color: #02c9c9; }
+      body header #nav.responsive a.active {
+        background-color: #ffc300;
+        opacity: 0.5; }
+
+  /* Welcome Container */
+  #welcomeContainer #welcome_content h1 {
+    font-size: 5em; } }
 
 /*# sourceMappingURL=style.css.map */
