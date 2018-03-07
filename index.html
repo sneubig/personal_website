@@ -8,29 +8,31 @@
     <link rel="stylesheet" type="text/css" href="./css/style.css"/>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <!--<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.bundle.min.js"></script>--> 
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.bundle.min.js"></script>
     <script type="text/javascript" src="./js/script.js"></script>
   </head>
   
-  <body >
+  
   	
     <header>
       <a id="menu-icon" onclick="openMenu()">&#9776;</a>
 
-      <nav id="nav">    
-          <ul id="navLinks">
-            <li>
-              <a href="#welcomeContainer" class="active">Home</a>
+      <nav id="nav" class="navbar">    
+          <ul id="navLinks" class="nav">
+            <li class="nav-item">
+              <a href="#welcomeContainer" class="nav-link">Home</a>
             </li>
-            <li>
-              <a href="#About">My Story</a>
+            <li class="nav-item">
+              <a href="#About" class="nav-link">My Story</a>
             </li>
-            <li>
-              <a href="#Skills">Experience</a>
+            <li class="nav-item">
+              <a href="#Skills" class="nav-link">Experience</a>
             </li>
           </ul>
       </nav>
   </header>
+
+  <body data-spy="scroll" data-target="#nav" data-offset="0">
     <!-- Header 
     <div id="menu">
 
@@ -64,7 +66,7 @@
  
     </div>
   		-->
-<div id="mainContainer" data-spy="scroll" data-target="#myTopNav">
+<div id="mainContainer" >
 
   <!-- Welcome -->
   <div id="welcomeContainer">
@@ -219,6 +221,17 @@ function openMenu() {
 
 
 $(document).ready(function() {
+  $('#nav ul li a').on( 'click', function(event) {
+    var target  = $( this );
+    var element = target.attr('href');
+
+    $('.navigation a').removeClass('active')
+    target.addClass('active');
+
+    $("body, html").animate({ 
+      scrollTop: jQuery( element ).offset().top - 90  
+    }, 800);
+  });
 
 
     // Default actions

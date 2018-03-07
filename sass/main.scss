@@ -67,6 +67,9 @@ header {
     right: 10px;
   }
 
+  #nav.navbar {
+    height: $navbarHeight;
+  }
 
 
 /* Navigation
@@ -121,10 +124,11 @@ header {
 		
 	}
 */
-
+body {
+  position: relative;
+}
 #mainContainer {
 	display: block;
-  position: relative;
 }
 
 // Welcome

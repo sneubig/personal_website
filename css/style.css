@@ -93,9 +93,11 @@ header {
 		
 	}
 */
-#mainContainer {
-  display: block;
+body {
   position: relative; }
+
+#mainContainer {
+  display: block; }
 
 .row {
   width: 100%;
