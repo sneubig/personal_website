@@ -14,7 +14,7 @@
   
   
   	
-    <header>
+    <header id="header">
       <a id="menu-icon" onclick="openMenu()">&#9776;</a>
 
       <nav id="nav" class="navbar">    
@@ -229,7 +229,7 @@ $(document).ready(function() {
     target.addClass('active');
 
     $("body, html").animate({ 
-      scrollTop: jQuery( element ).offset().top - 90  
+      scrollTop: jQuery( element ).offset().top  
     }, 800);
   });
 

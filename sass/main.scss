@@ -5,6 +5,8 @@ $secondaryColor: #fff;
 $maroon: maroon;
 $orange: #ffc300;
 $navbarHeight: 40px;
+$headerHeight: $navbarHeight + 5px;
+
 $black: #000;
 
 
@@ -20,7 +22,7 @@ $black: #000;
 header {
   background-color: $primaryColor;
   width: 100%;
-  height: $navbarHeight;
+  height: $headerHeight;
   position: fixed; 
   top: 0;
   left: 0;
@@ -67,9 +69,11 @@ header {
     right: 10px;
   }
 
-  #nav.navbar {
-    height: $navbarHeight;
-  }
+  #header nav#nav.navbar {
+      height: $navbarHeight;
+      padding: 0;
+    }
+
 
 
 /* Navigation
